@@ -1,5 +1,7 @@
 <?php
-    class LoginController{
+require_once "controller.php";
+
+    class LoginController extends Contoller{
 
         public function login(array $user): ?string{
 
@@ -15,17 +17,13 @@
             if(!$this->validateEmail($email))
                 return "view/no-connect/index.php";
 
-            if($email == "test@test.fr" && $password == "test"){
+            if($email == "test@test.test" && $password == "test"){
                 $_SESSION["user"] = $user;
                 return "view/connect/index.php";
             }else
                 return "view/no-connect/index.php";
             
         }
-        public function validateEmail(string $email): bool{
-
-            return (filter_var($email, FILTER_VALIDATE_EMAIL)) ? true : false; 
-
-        }
+        
     }
 ?>

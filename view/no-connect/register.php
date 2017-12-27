@@ -23,7 +23,8 @@
             <div class="col-lg-6 bg-white">
               <div class="form d-flex align-items-center">
                 <div class="content">
-                  <form id="register-form">
+                  <form id="register-form" method="post" action="<?= HOSTURL ?>">
+                    <input type="hidden" name="page" value="register">
                     <div class="form-group">
                       <input id="register-username" type="text" name="registerUsername" required class="input-material">
                       <label for="register-username" class="label-material">User Name</label>
